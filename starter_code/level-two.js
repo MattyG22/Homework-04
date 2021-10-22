@@ -5,13 +5,16 @@
 let score = 0;
 let arenaEl = document.querySelector('.js-arena');
 let scoreEl = document.querySelector('.js-score');
+let ballEl = document.querySelector('.js-ball');
 
-arenaEl.addEventListener('click', function() {
+arenaEl.addEventListener('click', function(e) {
   if ( e.target.classList.contains('js-ball') ) {
     score += 10;
+
     if ( score < 100 ) {
       scoreEl.innerText = score;
-    } else {
+    } 
+    else {
       declareWinner();
     }
   }
